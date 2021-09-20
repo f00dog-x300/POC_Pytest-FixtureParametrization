@@ -1,10 +1,10 @@
-import yaml, pytest
+import yaml
 
 
 def yaml_parser(
         target_values: str, 
         target_dir: str = 'Resources/Data/inventory.yaml') -> list:
-    """Using a string, gets the directory where yaml file is stored and parses information inside it."""
+    """Using a string, gets the directory where yaml file is stored and parses information inside it. Returns a list of the target values from the yaml file."""
     with open(target_dir) as f:
         my_dict = yaml.safe_load(f)
         return my_dict.get(target_values)
