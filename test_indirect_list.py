@@ -20,6 +20,7 @@ def yaml_eater(request) -> list:
 
 @pytest.mark.parametrize("triplify, double", [("a", "b")], indirect=["triplify", "double"])
 def test_indirect(triplify, double):
+    """Example of using indirect parameterization. First part of the parametrize argument is the name of the fixture that we're going to use, second part in a list is the list of parametres we're passing to the fixture as parameters, and lastly the source of indirect parameters which in this case is still the name of the fixtures. Otherwise I would use indirect=True."""
     assert triplify == "aaa"
     assert double == "bb"
 
